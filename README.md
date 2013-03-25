@@ -27,4 +27,6 @@ QueryString.current().parametersNamed('bar') ~> undefined
 
 // http://www.my-site.com/a/b/c?foo
 QueryString.current().parametersNamed('foo') ~> null
+
+new QueryString('http://www.google.com/?q=cats').parameterNamed('q')
 ```
