@@ -18,7 +18,7 @@ jQuery.ajax({
   method: 'GETorPOSTorSOME_OTHER_METHOD',
   useLocalStorageCache: true, // <~ this enable the caching for this particular request. OPTIONAL, DEFAULT false.
   localStorageCacheOptions: {
-    key: 'cache-key', // <~ this is the key used in the cache for storing the response. REQUIRED.
+    key: 'cache-key', // <~ this is the key used in the cache for storing the response. OPTIONAL, DEFAULT URL.
     namespace: 'your-name-space', // <~ a namespace to differenciate requests with the same key. OPTIONAL, DEFAULT 'LSXHR'.
     maxAge: 6000 // <~ max age for the cache entry, in milliseconds. OPTIONAL, DEFAULT (1 hour).
   }
