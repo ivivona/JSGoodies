@@ -30,3 +30,29 @@ QueryString.current().parametersNamed('foo') ~> null
 
 new QueryString('http://www.google.com/?q=cats').parameterNamed('q')
 ```
+
+## Local Storage Transport
+
+Easy way to cache requests in the Local Storage using jQuery.
+
+### Dependencies
+
+* jQuery
+* JSON 2
+
+### Usage
+
+``` javascript
+jQuery.ajax({
+  url: '/your-endpoint-here',
+  method: 'GETorPOSTorSOME_OTHER_METHOD',
+  useLocalStorageCache: true, // <~ this enable the caching for this particular request. OPTIONAL, DEFAULT false.
+  localStorageCacheOptions: {
+    key: 'cache-key', // <~ this is the key used in the cache for storing the response. OPTIONAL, DEFAULT URL.
+    namespace: 'your-name-space', // <~ a namespace to differenciate requests with the same key. OPTIONAL, DEFAULT 'LSXHR'.
+    maxAge: 6000 // <~ max age for the cache entry, in milliseconds. OPTIONAL, DEFAULT (1 hour).
+  }
+})
+```
+
+For shorthand methods you can set the caching options using the global settings (ajaxSetup) but isn't recommended.
